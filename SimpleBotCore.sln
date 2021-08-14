@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBotCore", "SimpleBotCore\SimpleBotCore.csproj", "{AA24ECB9-4E23-4390-BCCC-8C517FE5BC8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBotCore", "SimpleBotCore\SimpleBotCore.csproj", "{AA24ECB9-4E23-4390-BCCC-8C517FE5BC8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTest", "IntegrationTest\IntegrationTest.csproj", "{762E649E-43ED-4AF2-B942-CF541B15CC9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AA24ECB9-4E23-4390-BCCC-8C517FE5BC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA24ECB9-4E23-4390-BCCC-8C517FE5BC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA24ECB9-4E23-4390-BCCC-8C517FE5BC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762E649E-43ED-4AF2-B942-CF541B15CC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762E649E-43ED-4AF2-B942-CF541B15CC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762E649E-43ED-4AF2-B942-CF541B15CC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762E649E-43ED-4AF2-B942-CF541B15CC9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

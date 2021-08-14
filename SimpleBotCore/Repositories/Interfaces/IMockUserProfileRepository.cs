@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public interface IUserProfileRepository
+    public interface IMockUserProfileRepository
     {
         SimpleUser TryLoadUser(string userId);
 

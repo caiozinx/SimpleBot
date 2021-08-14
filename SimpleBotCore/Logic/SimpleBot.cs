@@ -9,10 +9,10 @@ namespace SimpleBotCore.Logic
 {
     public class SimpleBot : BotDialog
     {
-        IUserProfileRepository _userProfile;
-        IAskRepository _askRepository;
+        IMockUserProfileRepository _userProfile;
+        IMongoDbAskRepository _askRepository;
 
-        public SimpleBot(IUserProfileRepository userProfile, IAskRepository askRepository)
+        public SimpleBot(IMockUserProfileRepository userProfile, IMongoDbAskRepository askRepository)
         {
             _userProfile = userProfile;
             _askRepository = askRepository;

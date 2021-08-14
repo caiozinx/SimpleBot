@@ -34,7 +34,7 @@ namespace SimpleBotCore
             {
                 string connectionString = Configuration["MongoDB:ConnectionString"];
                 MongoClient client = new MongoClient(connectionString);
-                services.AddSingleton<IAskRepository>(new AskRepository(client));
+                services.AddSingleton<IMongoDbAskRepository>(new MongoDbAskRepository(client));
 
             }else if(flagDatabase.Equals("S"))
             {
@@ -43,10 +43,10 @@ namespace SimpleBotCore
             else
             {
                 //mockinit
-                services.AddSingleton<IAskRepository>(new AskMock());
+                services.AddSingleton<IMockAskRepository>(new MockAskRepository());
             }
 
-            services.AddSingleton<IUserProfileRepository>(new UserProfileMockRepository());
+            services.AddSingleton<IMockUserProfileRepository>(new MockUserProfileRepository());
             services.AddSingleton<IBotDialogHub, BotDialogHub>();
             services.AddSingleton<BotDialog, SimpleBot>();
 

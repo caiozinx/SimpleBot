@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public class UserProfileMockRepository : IUserProfileRepository
+    public class MockUserProfileRepository : IMockUserProfileRepository
     {
         Dictionary<string, SimpleUser> _users = new Dictionary<string, SimpleUser>();
 

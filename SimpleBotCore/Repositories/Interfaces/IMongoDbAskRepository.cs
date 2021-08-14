@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public interface IAskRepository
+    public interface IMongoDbAskRepository
     {
         void StoreAsk(string ask);
     }
