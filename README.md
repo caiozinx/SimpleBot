@@ -8,17 +8,17 @@ Implementar o Bot SQL usando o projeto do dia 10/Ago como base. Nesse projeto, i
 * usar a biblioteca padrão do MongoDB
 
 secrets.json
-{
-  "MongoDB": {
-    "ConnectionString": "mongodb://localhost:27017"
-  },
-  "ConnectionStrings": {
-    "SimpleBotCore": "Server=localhost;Database=SimpleBotCore;User=SA;Password=yourpasswd"
+  {
+    "MongoDB": {
+      "ConnectionString": "mongodb://localhost:27017"
+    },
+    "ConnectionStrings": {
+      "SimpleBotCore": "Server=localhost;Database=SimpleBotCore;User=SA;Password=yourpasswd"
+    }
   }
-}
 
 appSettings.json
 
-"DatabaseFlag": "M" #MongoDB
-"DatabaseFlag": "S" #SqlServer
-"DatabaseFlag": "" #Mock
+  "DatabaseFlag": "M"  = MongoDB
+  "DatabaseFlag": "S"  = SqlServer
+  "DatabaseFlag": ""   = Mock
