@@ -1,12 +1,11 @@
 ﻿using SimpleBotCore.Logic;
+using SimpleBotCore.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public class MockUserProfileRepository : IMockUserProfileRepository
+    public class MockUserProfileRepository : IUserProfileRepository
     {
         Dictionary<string, SimpleUser> _users = new Dictionary<string, SimpleUser>();
 

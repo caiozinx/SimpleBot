@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SimpleBotCore.Repositories.Interfaces
+namespace SimpleBotCore.Repositories
 {
-    public interface ISqlAskRepository
+    public interface IAskRepository
     {
         void StoreAsk(string ask);
     }

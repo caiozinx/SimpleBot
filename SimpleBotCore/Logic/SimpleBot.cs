@@ -1,18 +1,17 @@
 ﻿using SimpleBotCore.Bot;
 using SimpleBotCore.Repositories;
+using SimpleBotCore.Repositories.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SimpleBotCore.Logic
 {
     public class SimpleBot : BotDialog
     {
-        IMockUserProfileRepository _userProfile;
-        IMongoDbAskRepository _askRepository;
+        IUserProfileRepository _userProfile;
+        IAskRepository _askRepository;
 
-        public SimpleBot(IMockUserProfileRepository userProfile, IMongoDbAskRepository askRepository)
+        public SimpleBot(IUserProfileRepository userProfile, IAskRepository askRepository)
         {
             _userProfile = userProfile;
             _askRepository = askRepository;

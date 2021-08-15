@@ -16,5 +16,13 @@ namespace SimpleBotCore.Logic
         {
             this.Id = userId ?? throw new ArgumentNullException(nameof(userId));
         }
+
+        public SimpleUser(string id, string nome, int idade, string cor)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Idade = idade;
+            this.Cor = cor;
+        }
     }
 }

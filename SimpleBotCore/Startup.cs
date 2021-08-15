@@ -1,19 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using SimpleBotCore.Bot;
 using SimpleBotCore.Logic;
 using SimpleBotCore.Repositories;
 using SimpleBotCore.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SimpleBotCore
 {
@@ -36,21 +30,22 @@ namespace SimpleBotCore
                 //mongodb init
                 string connectionString = Configuration["MongoDB:ConnectionString"];
                 MongoClient client = new MongoClient(connectionString);
-                services.AddSingleton<IMongoDbAskRepository>(new MongoDbAskRepository(client));
+                services.AddSingleton<IAskRepository>(new MongoDbAskRepository(client));
+                services.AddSingleton<IUserProfileRepository>(new MongoDbUserProfileRepository(client));
 
             }else if(flagDatabase.Equals("S"))
             {
                 //sqlserver init
-                services.AddTransient<ISqlAskRepository, SqlAskRepository>();
-                services.AddTransient<ISqlUserProfileRepository, SqlUserProfileRepository>();
+                services.AddTransient<IAskRepository, SqlAskRepository>();
+                services.AddTransient<IUserProfileRepository, SqlUserProfileRepository>();
             }
             else
             {
                 //mock init
-                services.AddSingleton<IMockAskRepository>(new MockAskRepository());
+                services.AddSingleton<IAskRepository, MockAskRepository>();
+                services.AddSingleton<IUserProfileRepository>(new MockUserProfileRepository());
             }
 
-            services.AddSingleton<IMockUserProfileRepository>(new MockUserProfileRepository());
             services.AddSingleton<IBotDialogHub, BotDialogHub>();
             services.AddSingleton<BotDialog, SimpleBot>();
 

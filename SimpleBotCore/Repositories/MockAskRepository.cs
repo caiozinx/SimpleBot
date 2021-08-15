@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public class MockAskRepository : IMockAskRepository
+    public class MockAskRepository : IAskRepository
     {
         Dictionary<string, string> _ask = new Dictionary<string, string>();
 

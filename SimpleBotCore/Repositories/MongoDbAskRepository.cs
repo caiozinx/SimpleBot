@@ -3,7 +3,7 @@ using MongoDB.Driver;
 
 namespace SimpleBotCore.Repositories
 {
-    public class MongoDbAskRepository : IMongoDbAskRepository
+    public class MongoDbAskRepository : IAskRepository
     {
         MongoClient _client;
         IMongoCollection<BsonDocument> _collection;
@@ -12,7 +12,7 @@ namespace SimpleBotCore.Repositories
         {
             _client = client;
             var db = client.GetDatabase("db19");
-            var storeCol = db.GetCollection<BsonDocument>("col02");
+            var storeCol = db.GetCollection<BsonDocument>("ask");
             _collection = storeCol;
         }
 

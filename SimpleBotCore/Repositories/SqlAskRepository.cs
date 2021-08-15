@@ -1,14 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using SimpleBotCore.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public class SqlAskRepository : ISqlAskRepository
+    public class SqlAskRepository : IAskRepository
     {
         private readonly IConfiguration _configuration;
 

@@ -2,15 +2,12 @@
 using SimpleBotCore.Logic;
 using SimpleBotCore.Repositories.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleBotCore.Repositories
 {
-    public class SqlUserProfileRepository : ISqlUserProfileRepository
+    public class SqlUserProfileRepository : IUserProfileRepository
     {
         SimpleUser _users;
         private IConfiguration _configuration;
