@@ -9,6 +9,7 @@ using MongoDB.Driver;
 using SimpleBotCore.Bot;
 using SimpleBotCore.Logic;
 using SimpleBotCore.Repositories;
+using SimpleBotCore.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace SimpleBotCore
             
             if(flagDatabase.Equals("M"))
             {
+                //mongodb init
                 string connectionString = Configuration["MongoDB:ConnectionString"];
                 MongoClient client = new MongoClient(connectionString);
                 services.AddSingleton<IMongoDbAskRepository>(new MongoDbAskRepository(client));
@@ -39,10 +41,12 @@ namespace SimpleBotCore
             }else if(flagDatabase.Equals("S"))
             {
                 //sqlserver init
+                services.AddTransient<ISqlAskRepository, SqlAskRepository>();
+                services.AddTransient<ISqlUserProfileRepository, SqlUserProfileRepository>();
             }
             else
             {
-                //mockinit
+                //mock init
                 services.AddSingleton<IMockAskRepository>(new MockAskRepository());
             }
 
@@ -62,9 +66,7 @@ namespace SimpleBotCore
             }
 
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
