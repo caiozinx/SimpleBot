@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 using NUnit.Framework;
 using SimpleBotCore.Logic;
@@ -7,6 +8,7 @@ namespace IntegrationTest
 {
     public class Tests
     {
+        private readonly IConfiguration _configuration;
 
         [SetUp]
         public void Setup()
@@ -44,6 +46,22 @@ namespace IntegrationTest
         public void TestRepositoryMockUserProfileTryLoadUser()
         {
             var UserProfile = new MockUserProfileRepository();
+            UserProfile.TryLoadUser("");
+            Assert.Pass();
+        }
+
+        [Test]
+        public void TestRepositorySqlUserProfileCreate()
+        {
+            SqlAskRepository ask = new SqlAskRepository(_configuration);
+            ask.StoreAsk("Pergunta 1");
+            Assert.Pass();
+        }
+
+        [Test]
+        public void TestRepositorySqlUserProfileTryLoadUser()
+        {
+            SqlUserProfileRepository UserProfile = new SqlUserProfileRepository(_configuration);
             UserProfile.TryLoadUser("");
             Assert.Pass();
         }
